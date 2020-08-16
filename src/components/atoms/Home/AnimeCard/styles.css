@@ -1,0 +1,19 @@
+.anime-card {
+  list-style: none;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.anime-card:hover {
+  transform: scale(1.07);
+}
+
+.anime-card img {
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  width: 11rem;
+  height: 160px !important;
+  object-fit: cover;
+}

@@ -1,10 +1,8 @@
-import React from "react";
-import Routes from "./routes";
-import "./utils/styles/global.css";
-import "firebase/firestore";
+import firebase from "firebase/app";
+
 import "firebase/auth";
-import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore";
-import "react-notifications-component/dist/theme.css";
+import "firebase/storage";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCxSaRtixSzs9SkuTyhKT8L5DGa-h9FZww",
@@ -17,14 +15,12 @@ const firebaseConfig = {
   measurementId: "G-CET524P744",
 };
 
-const fuego = new Fuego(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-function App() {
-  return (
-    <FuegoProvider fuego={fuego}>
-      <Routes />
-    </FuegoProvider>
-  );
-}
+export default firebase;
 
-export default App;
+export const handleLoginEmailAndPassword = (email, password) =>
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((resp) => resp.user.uid);

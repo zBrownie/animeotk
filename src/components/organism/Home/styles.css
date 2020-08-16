@@ -1,0 +1,16 @@
+.title-anime-container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  font: 700 3.6rem Archivo;
+
+  background: #23231f;
+  color: #fff;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.title-anime-container p {
+  margin-left: 10px;
+}
